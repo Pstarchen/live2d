@@ -1,49 +1,17 @@
 # KanBanMusume
 WordPress添加看板娘
 
+# 看板娘简介
 
-WordPress博客添加看板娘(送37套服饰)
-1.  从我的github下载压缩包
+看板娘就是一个卡通模型，通过代码的部署，会在你网页的指定位置进行显示，你用鼠标进行点击会有不同地字幕，所有的一切都可以预先进行设置。
 
-2. 将下载的压缩包 上传到网站的根目录,并解压
+# 代码地址
+ [Pstarchen/live2d: live2d看板娘](https://github.com/Pstarchen/live2d)
 
-scp live2d_v1.0.zip root@xx.xx.xx.xx:/usr/local/nginx/html/vwhm_net_wwwroot/
-
-3. 在header文件中添加以下代码
-
-cd wp-content/themes/twentyseventeen/
-
+# 设置教程
+下载文件后解压代码到你的博客网站根目录去。（目录位置可以自定义）
+然后把解压出来的文件夹改名为：live2d 。
+在博客程序头部文件（header.php）引入界面样式，在 head 标签内插入如下代码
+```
 <link rel="stylesheet" href="/live2d/css/live2d.css" />
-<script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.js"></script>
-
-4. 在footer文件中body结束标签之前,添加以下代码
-
-<div id="landlord">
-    <div class="message" style="opacity:0"></div>
-    <canvas id="live2d" width="280" height="250" class="live2d"></canvas>
-    <div class="hide-button">隐藏</div>
-    <div class="switch-button">换装</div>
-</div>
-
-<script type="text/javascript">
-    var message_Path = '/live2d/'
-    var home_Path = 'http://vwhm.net'  //此处修改为你的域名，必须带斜杠
-</script>
-<script type="text/javascript" src="/live2d/js/live2d.js"></script>
-<script type="text/javascript" src="/live2d/js/message.js"></script>
-<script type="text/javascript">
-    var index = Math.ceil(Math.random()*37)
-        console.log('未闻花名vwhm.net + ' + index)
-        loadlive2d("live2d", "/live2d/model/pio/model_"+index+".json");
-</script>
-
-​
-
-效果如下:
-
-
-WordPress博客添加看板娘(送37套服饰)
-​
-
-​
-
+```
